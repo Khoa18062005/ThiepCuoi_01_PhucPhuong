@@ -602,50 +602,78 @@ img.loaded { opacity: 1; }
 }
 
 @media (max-width: 576px) {
-    #main-content { padding-top: 80px; }
-    
-    /* Tối ưu Trang Chào (Welcome Screen) */
-    .welcome-content { padding: 40px 20px; border-radius: 120px 120px 30px 30px; }
-    .date-box { padding: 10px 25px; font-size: 1rem; }
-    
-    /* Tối ưu nút điều khiển nhạc */
-    .music-btn { bottom: 20px; right: 20px; width: 45px; height: 45px; font-size: 1rem; }
-    
-    /* Tối ưu Phong Bì - Ngăn tràn ngang */
-    .envelope-wrapper { width: 90%; height: 200px; max-width: 350px; margin: 40px auto; }
-    .envelope-wrapper.is-open .envelope-letter { transform: translateY(-100px); }
-    .envelope-seal { width: 50px; height: 50px; font-size: 1.5rem; }
-    
-    /* Tối ưu Hình ảnh Đại diện */
-    .photo-circle { width: 120px; height: 120px; }
-    .person-name { font-size: 1.6rem; margin-top: 20px; }
-    .person-role { font-size: 0.8rem; letter-spacing: 2px; }
-    
-    /* Tiêu đề bay lên */
-    .blessing-text { font-size: 2.5rem; }
-    .wedding-date-sub { font-size: 1rem; letter-spacing: 3px; }
-    .is-open-active .blessing-text { transform: translateY(-80px); }
-    
-    .profile-section { margin-top: 30px; }
-    .info-card { padding: 25px 15px; border-radius: 40px 40px 20px 20px; }
-    .flower-icon { font-size: 2.5rem; }
-    .section-title { font-size: 2rem; }
-    
-    /* Tối ưu Tiệc Cưới (Reception) */
-    .reception-card { padding: 30px 15px; border-radius: 30px; }
-    .reception-date { font-size: 2.5rem; } /* Bóp nhỏ chữ siêu to để không nứt màn hình */
-    .reception-time { font-size: 1.1rem; }
-    .map-img { height: 220px; } /* Thu gọn chiều cao bản đồ */
-    
-    /* Tối ưu Lời Chúc (Guestbook) */
-    .sparkle-title { font-size: 2.5rem; }
-    .guestbook-form-card { padding: 20px 15px; }
-    .wish-item { padding: 15px; }
-    .wish-header { flex-direction: column; align-items: flex-start; gap: 5px; } /* Đẩy thời gian xuống dòng */
-    .wish-time { font-size: 0.75rem; }
-    
-    /* Tối ưu Lời Cảm Ơn */
-    .thank-box { padding: 30px 15px !important; border-radius: 60px 60px 30px 30px; }
-    .thank-box .blessing-text { font-size: 2.8rem !important; }
-    .footer-names { font-size: 1.5rem; }
+    #main-content { padding-top: 60px; }
+
+    /* 1. Sửa lỗi Phong bì và Ảnh cưới bên trong */
+    .envelope-wrapper { 
+        width: 92%; 
+        height: 230px; /* Tăng nhẹ chiều cao để ảnh cân đối hơn */
+        margin: 30px auto; 
+    }
+    .envelope-letter {
+        padding: 5px; /* Giảm padding để ảnh cưới hiện rõ hơn */
+    }
+    .envelope-wrapper.is-open .envelope-letter { 
+        transform: translateY(-110px); /* Đẩy thư lên vừa tầm mắt */
+    }
+
+    /* 2. Tối ưu thẻ Profile Cô dâu & Chú rể */
+    .photo-circle { 
+        width: 110px; 
+        height: 110px; 
+        border-width: 3px; 
+    }
+    .person-name { 
+        font-size: 1.5rem; 
+        margin-top: 15px; 
+    }
+    .profile-card {
+        padding: 20px 10px 15px;
+        margin-bottom: 10px;
+    }
+
+    /* 3. Sửa lỗi Sổ lưu bút (Căn giữa nút & thu gọn khoảng cách) */
+    .guestbook-form-card { 
+        padding: 20px 15px; 
+        border-radius: 15px;
+    }
+    .custom-input { 
+        padding: 10px; 
+        font-size: 0.9rem; 
+    }
+    /* Đảm bảo nút Gửi luôn nằm chính giữa */
+    .guestbook-form-card .text-center {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .btn-send-wish {
+        width: 80%; /* Cho nút to hơn một chút để dễ bấm trên mobile */
+        padding: 12px;
+    }
+
+    /* 4. Tối ưu danh sách lời chúc */
+    .wish-item { 
+        padding: 12px; 
+        margin-bottom: 15px; 
+    }
+    .wish-name { font-size: 1rem; }
+    .wish-content { font-size: 0.85rem; }
+
+    /* 5. Tối ưu phần Tiệc Cưới & Bản đồ */
+    .reception-card { padding: 25px 15px; }
+    .reception-date { font-size: 2.2rem; }
+    .reception-address { 
+        font-size: 0.8rem; 
+        letter-spacing: 1px; 
+        padding: 5px 10px; 
+    }
+    .map-img { height: 180px; }
+
+    /* 6. Lời cảm ơn cuối trang */
+    .thank-box { 
+        padding: 40px 20px !important; 
+        border-radius: 50px 50px 25px 25px; 
+    }
+    .thank-box .blessing-text { font-size: 2.5rem !important; }
 }
