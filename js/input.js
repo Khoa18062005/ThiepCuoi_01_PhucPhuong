@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (openBtn) {
         openBtn.addEventListener('click', function () {
             welcomeScreen.classList.add('fade-out');
-            
+
             // === CODE MỚI THÊM VÀO: Kích hoạt phát nhạc khi nhấn Mở Thiệp ===
-            if(bgMusic) {
+            if (bgMusic) {
                 bgMusic.play().catch(err => console.log("Trình duyệt chặn autoplay:", err));
             }
 
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // === CODE MỚI THÊM VÀO: Xử lý khi khách bấm vào nút nhạc ở góc màn hình ===
     if (musicControl) {
-        musicControl.addEventListener('click', function() {
+        musicControl.addEventListener('click', function () {
             if (bgMusic.paused) {
                 bgMusic.play();
                 musicControl.classList.remove('paused'); // Xoay lại
@@ -254,6 +254,39 @@ document.addEventListener('DOMContentLoaded', function () {
                 btnSendWish.innerHTML = originalBtnText;
                 btnSendWish.disabled = false;
             });
+        });
+    }
+    // 9. Xử lý mở/đóng Popup Lì Xì
+    const openBankModalBtn = document.getElementById('open-bank-modal');
+    const closeBankModalBtn = document.getElementById('close-bank-modal');
+    const bankModalOverlay = document.getElementById('bank-modal');
+
+    if (openBankModalBtn && bankModalOverlay && closeBankModalBtn) {
+        // Mở popup
+        openBankModalBtn.addEventListener('click', function () {
+            bankModalOverlay.classList.add('show');
+        });
+
+        // Đóng popup khi bấm nút X
+        closeBankModalBtn.addEventListener('click', function () {
+            bankModalOverlay.classList.remove('show');
+        });
+
+        // Đóng popup khi click ra ngoài vùng xám
+        bankModalOverlay.addEventListener('click', function (e) {
+            if (e.target === bankModalOverlay) {
+                bankModalOverlay.classList.remove('show');
+            }
+        });
+    }
+
+    // Hàm copy số tài khoản
+    window.copySTK = function () {
+        const stk = document.getElementById('stk').innerText;
+        navigator.clipboard.writeText(stk).then(() => {
+            alert("Đã sao chép số tài khoản: " + stk + "\nCảm ơn tấm lòng của bạn! ❤️");
+        }).catch(err => {
+            console.error('Không thể sao chép', err);
         });
     }
 });

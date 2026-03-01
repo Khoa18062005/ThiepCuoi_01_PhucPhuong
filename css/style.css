@@ -1036,6 +1036,8 @@ body {
     box-shadow: 0 5px 15px rgba(255, 138, 159, 0.4);
 }
 
+
+
 /* =========================================
    THANK YOU
 ========================================= */
@@ -1230,6 +1232,221 @@ img {
 
 img.loaded {
     opacity: 1;
+}
+
+/* =========================================
+   HỘP MỪNG CƯỚI - NÚT VÀ POPUP
+========================================= */
+.lucky-money-section {
+    position: relative;
+    padding: 60px 0 80px;
+    background: var(--cherry-blossom-light);
+}
+
+/* Nút bấm lì xì gọn gàng */
+.simple-lixi-btn {
+    width: 180px;
+    height: 240px;
+    background: linear-gradient(135deg, #e63946, #d90429);
+    border-radius: 15px; /* Bo góc mượt hơn */
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(217, 4, 41, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    animation: shakeLixi 3s infinite; /* Thêm hiệu ứng lắc mỗi 3s */
+}
+
+/* Hiệu ứng rung lắc (lắc nhẹ 2 bên rồi đứng im) */
+@keyframes shakeLixi {
+    0%, 85% { transform: translateY(0) rotate(0); }
+    88% { transform: translateY(-3px) rotate(-5deg); }
+    91% { transform: translateY(-3px) rotate(5deg); }
+    94% { transform: translateY(-3px) rotate(-5deg); }
+    97% { transform: translateY(-3px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(0); }
+}
+
+.simple-lixi-btn:hover {
+    animation: none; 
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(217, 4, 41, 0.6);
+}
+
+.lixi-seal-simple {
+    width: 85px;
+    height: 85px;
+    background: linear-gradient(145deg, #FFEAA7, #FDCB6E);
+    border-radius: 50%;
+    color: #d90429;
+    font-family: 'Dancing Script', cursive; /* Đổi sang font chữ uốn lượn thư pháp */
+    font-size: 3rem;    /* Tăng cỡ chữ Hỷ */
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border: 3px solid white;
+    margin-bottom: 20px;
+    animation: pulseGold 2s infinite;
+}
+
+.lixi-text-simple {
+    color: #FFEAA7;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* --- LỚP PHỦ POPUP (MODAL) --- */
+.bank-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.bank-modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* NỘI DUNG POPUP */
+.bank-modal-content {
+    background: linear-gradient(145deg, #ffffff, #FFF5F8);
+    width: 90%;
+    max-width: 400px;
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+    transform: scale(0.8) translateY(30px);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    border: 3px solid #FFB7C5;
+}
+
+.bank-modal-overlay.show .bank-modal-content {
+    transform: scale(1) translateY(0);
+}
+
+/* Nút tắt Popup */
+.close-modal-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #FFE4E9;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: #C9184A;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-modal-btn:hover {
+    background: #C9184A;
+    color: white;
+    transform: rotate(90deg);
+}
+
+.modal-title-custom {
+    color: #C9184A;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.modal-subtitle {
+    color: #6D5B7A;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.qr-box-simple {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 15px;
+    padding: 10px;
+    background: var(--cherry-blossom-deep);
+    border-radius: 15px;
+    border: 2px dashed white;
+}
+
+.qr-box-simple img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.bank-details-simple p {
+    margin: 5px 0;
+    color: #6D5B7A;
+}
+
+.bank-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.bank-number {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #d90429 !important;
+    letter-spacing: 1px;
+}
+
+.bank-owner {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.btn-copy-full {
+    background: linear-gradient(145deg, #FFB7C5, #FF8A9F);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(255, 138, 159, 0.4);
+}
+
+.btn-copy-full:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 138, 159, 0.6);
+}
+
+.thank-you-text {
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-style: italic;
 }
 
 /* =========================================

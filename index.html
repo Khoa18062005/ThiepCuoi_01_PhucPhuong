@@ -7,7 +7,9 @@
     <title>Hoàng Phúc & Thanh Phương | Thiệp Cưới</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -61,7 +63,8 @@
             <div class="row justify-content-center g-4 profile-section">
                 <div class="col-6 col-md-4">
                     <div class="profile-card">
-                        <a href="https://www.facebook.com/hohoang.phuc.10?locale=vi_VN" target="_blank" class="avatar-link" title="Xem Facebook Chú Rể">
+                        <a href="https://www.facebook.com/hohoang.phuc.10?locale=vi_VN" target="_blank"
+                            class="avatar-link" title="Xem Facebook Chú Rể">
                             <div class="photo-circle">
                                 <img src="asset/ChuRe.jpg" alt="Chú rể">
                             </div>
@@ -73,7 +76,8 @@
 
                 <div class="col-6 col-md-4">
                     <div class="profile-card">
-                        <a href="https://www.facebook.com/kiphuog.le?locale=vi_VN" target="_blank" class="avatar-link" title="Xem Facebook Cô Dâu">
+                        <a href="https://www.facebook.com/kiphuog.le?locale=vi_VN" target="_blank" class="avatar-link"
+                            title="Xem Facebook Cô Dâu">
                             <div class="photo-circle">
                                 <img src="asset/CoDau.jpg" alt="Cô dâu">
                             </div>
@@ -87,9 +91,9 @@
         <section class="photo-album py-5 text-center">
             <div class="container">
                 <div class="album-wrapper mx-auto" style="max-width: 850px;">
-                    
+
                     <h2 class="sparkle-title">Album Cưới</h2>
-                    
+
                     <div class="row g-4 mt-2 justify-content-center">
                         <div class="col-6">
                             <div class="album-item">
@@ -112,7 +116,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
@@ -123,7 +127,7 @@
 
                         <div class="info-card mx-auto">
                             <div class="flower-icon">✿</div>
-                            <h2 class="section-title">Lễ Vu Quy & Tân Hôn</h2>
+                            <h2 class="section-title">Lễ Vu Quy</h2>
                             <div class="row align-items-center">
                                 <div class="col-md-5">
                                     <div class="event-box">
@@ -180,17 +184,17 @@
         <section class="wedding-reception py-5 text-center">
             <div class="container">
                 <h2 class="section-title">Thông Tin Tiệc Cưới</h2>
-                
+
                 <div class="reception-card mx-auto mt-4">
                     <p class="reception-subtitle">TIỆC CƯỚI ĐƯỢC CỬ HÀNH TẠI TƯ GIA</p>
-                    
+
                     <p class="reception-time">VÀO LÚC 17H00 - THỨ BẢY</p>
-                    
+
                     <h3 class="reception-date">28 . 03 . 2026</h3>
-                    
+
                     <p class="reception-lunar">(Nhằm ngày 10 tháng 2 năm Bính Ngọ)</p>
-                    
-                    
+
+
                     <p class="reception-address">A4/38 khu phố 4, phường Biên Hoà, tỉnh Đồng Nai</p>
 
                     <a href="https://maps.app.goo.gl/qCuKKnA2n6CYsGjS8" target="_blank" class="map-link-wrapper">
@@ -203,15 +207,54 @@
             </div>
         </section>
 
+        <section class="lucky-money-section py-5 text-center">
+            <div class="container">
+                <h2 class="sparkle-title mb-2">Hộp Mừng Cưới</h2>
+                <p class="text-muted mb-4" style="font-style: italic;">Dành cho những người thân yêu ở xa không thể đến chung vui</p>
+
+                <div class="simple-lixi-btn mx-auto" id="open-bank-modal">
+                    <div class="lixi-seal-simple">Hỷ</div>
+                    <p class="lixi-text-simple">Nhấn để mở</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="bank-modal-overlay" id="bank-modal">
+            <div class="bank-modal-content">
+                <button class="close-modal-btn" id="close-bank-modal"><i class="bi bi-x-lg"></i></button>
+                
+                <h3 class="modal-title-custom">Hộp Mừng Cưới</h3>
+                <p class="modal-subtitle">Cô Dâu - Thanh Phương</p>
+                
+                <div class="qr-box-simple">
+                    <img src="asset/QrPhuong.png" alt="QR Ngân Hàng" class="qr-img loaded">
+                </div>
+                
+                <div class="bank-details-simple">
+                    <p class="bank-name">Vietcombank</p>
+                    <p class="bank-number" id="stk">1017335345</p>
+                    <p class="bank-owner">LÊ THỊ THANH PHƯƠNG</p>
+                </div>
+                
+                <button class="btn-copy-full" onclick="copySTK()">
+                    <i class="bi bi-clipboard"></i> Sao chép số tài khoản
+                </button>
+                
+                <p class="thank-you-text">Cảm ơn bạn đã chung vui cùng chúng mình trong ngày trọng đại! ❤️</p>
+            </div>
+        </div>
+
         <section class="guestbook-section py-5 text-center">
             <div class="container">
                 <h2 class="sparkle-title" style="margin-bottom: 40px;">Sổ Lưu Bút</h2>
-                
+
                 <div class="guestbook-wrapper mx-auto" style="max-width: 700px;">
                     <div class="guestbook-form-card">
-                        <input type="text" id="guestName" class="form-control custom-input" placeholder="Nhập tên của bạn*">
-                        <textarea id="guestMessage" class="form-control custom-input mt-3" rows="3" placeholder="Nhập lời chúc của bạn*"></textarea>
-                        
+                        <input type="text" id="guestName" class="form-control custom-input"
+                            placeholder="Nhập tên của bạn*">
+                        <textarea id="guestMessage" class="form-control custom-input mt-3" rows="3"
+                            placeholder="Nhập lời chúc của bạn*"></textarea>
+
                         <div class="text-center mt-4">
                             <!-- <span class="magic-wand">🪄</span> -->
                             <button id="btn-send-wish" class="btn-send-wish">GỬI LỜI CHÚC</button>
@@ -224,15 +267,17 @@
                                 <span class="wish-name">Bác Bảo</span>
                                 <span class="wish-time">02:15:42 19/12/2025</span>
                             </div>
-                            <p class="wish-content">Chúc hai con nên duyên vợ chồng, nghĩa tình bền chặt, gia đạo an khang.</p>
+                            <p class="wish-content">Chúc hai con nên duyên vợ chồng, nghĩa tình bền chặt, gia đạo an
+                                khang.</p>
                         </div>
-                        
+
                         <div class="wish-item text-start">
                             <div class="wish-header d-flex justify-content-between">
                                 <span class="wish-name">Dì 6</span>
                                 <span class="wish-time">02:15:22 19/12/2025</span>
                             </div>
-                            <p class="wish-content">Chúc hai đứa về chung một nhà thật hạnh phúc, yêu nhau hoài không chán nha!</p>
+                            <p class="wish-content">Chúc hai đứa về chung một nhà thật hạnh phúc, yêu nhau hoài không
+                                chán nha!</p>
                         </div>
                     </div>
                 </div>
